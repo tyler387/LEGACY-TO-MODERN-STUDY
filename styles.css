@@ -1,0 +1,97 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #fff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --high: #ef4444;
+  --medium: #f59e0b;
+  --low: #10b981;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Pretendard', 'Noto Sans KR', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+}
+
+.todo-app {
+  width: min(760px, 100%);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.todo-form {
+  display: grid;
+  grid-template-columns: 1.5fr auto 1fr auto;
+  gap: 8px;
+}
+
+.todo-form input,
+.todo-form select,
+button {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+button {
+  border: 0;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.todo-controls {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.filter { background: #e5e7eb; color: #111827; }
+.filter.active { background: var(--primary); color: #fff; }
+.clear { margin-left: auto; background: var(--danger); }
+
+.todo-meta { color: var(--muted); margin: 8px 0 14px; }
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.todo-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.todo-main { display: grid; gap: 4px; }
+.todo-title { font-weight: 600; }
+.todo-item.completed .todo-title { text-decoration: line-through; color: var(--muted); }
+
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #f3f4f6; }
+.badge.priority-high { background: color-mix(in srgb, var(--high) 25%, white); }
+.badge.priority-medium { background: color-mix(in srgb, var(--medium) 25%, white); }
+.badge.priority-low { background: color-mix(in srgb, var(--low) 25%, white); }
+
+.delete { background: var(--danger); padding: 8px 10px; }
